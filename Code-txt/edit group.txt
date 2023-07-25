@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#Edit  group
+
+
+echo "Enter group  name"
+read gname
+
+echo enter Option
+read op
+
+echo enter user name
+read user
+
+echo enter group id
+read id
+
+if [ $op = d ]
+then
+  groupdel $gname
+ echo "Group is deleted"
+elif [ $op = n ]  #change group id
+then
+  groupmod -g $gname $id
+  echo "id changed"
+else
+ echo nothing
+
+fi
+

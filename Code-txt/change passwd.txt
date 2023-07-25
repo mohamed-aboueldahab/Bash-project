@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+#change password for user
+
+
+echo "Enter user name"
+read user
+
+
+echo Enter new password
+read pass
+
+
+if grep -q $user /etc/passwd
+then
+ echo $pass |passwd   $user --stdin
+ echo "password changed"
+
+else
+
+ echo "User not found"
+
+fi
+

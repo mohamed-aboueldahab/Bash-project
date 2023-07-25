@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#Edit  user
+
+
+echo "Enter user name"
+read user
+
+echo enter Option
+read op
+
+echo enter group name
+read gname
+
+if [ $op = d ]
+then
+  userdel $user
+ echo "User is deleted"
+elif [ $op = G]
+then
+  usermod -aG $gname $user
+  echo "user added"
+else
+ echo nothing
+
+fi
+
+
+
+

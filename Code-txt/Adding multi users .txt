@@ -1,0 +1,21 @@
+!/bin/bash
+
+#multi user
+
+#./f11  name  count   file
+
+
+name=$1
+count=$2
+
+
+for i in $(seq 1 $2)
+do
+  uname=${name}${i}
+  useradd $uname
+  pass=$(openssl rand -base64 8)
+  echo $pass |passwd $uname --stdin
+  echo $uname:$pass >>file.txt
+
+done
+

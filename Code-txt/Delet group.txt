@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Delete group
+
+
+echo "Enter group name"
+read group
+
+if grep -q $group /etc/group
+then
+  groupdel $group
+ echo "Group is deleted"
+else
+
+ echo "Group not found"
+
+fi
+
+

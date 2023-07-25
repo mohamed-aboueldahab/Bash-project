@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#Delete user
+
+
+echo "Enter user name"
+read user
+
+if grep -q $user /etc/passwd
+then
+  userdel $user
+ echo "User is deleted"
+else
+
+ echo "user not found"
+
+fi
+

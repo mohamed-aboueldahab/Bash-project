@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#Adding  user with  passwd
+
+echo "Enter the username:"
+read  username
+
+file=outfil.txt
+
+if grep -q $username /etc/passwd
+then
+  echo user is exist
+
+else
+
+useradd ${username}
+pass=$(openssl rand -base64 8)  #random passwd for user
+
+echo $pass |passwd   ${username} --stdin    #give user rand passwd
+
+echo $username:$pass   >>$file   #store passwd in file
+
+fi
+
+
+
+   

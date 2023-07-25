@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#Add user to group
+
+
+
+echo enter user name
+read username
+
+echo enter group name
+read gname
+
+
+if_usr_exist=`getent passwd $username | cut -f 1 -d:`
+if_grp_exist=`getent group $gname |cut -d: -f 1`
+
+if [ "$gname" = "$if_grp_exist" -a "$username" = "$if_usr_exist" ]; then
+        gpasswd  -a $username   $gname
+fi
+
+

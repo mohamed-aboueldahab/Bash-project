@@ -1,0 +1,42 @@
+#!/bin/bash
+
+PS3="Main: "
+
+
+echo " Please! Make sure that you are root or member in wheel group Before choose"
+
+select one in  "adduser" "Add multiuser"  "Delete user"  "Edit user"  "Add group"  "Delete group" "Edit group" "Show User Details"  "Adding user to group" "Exit"
+
+do
+
+ case $one in
+
+      "adduser" )  source ./project2 ;;
+
+      "Add multiuser"  )  source ./project1   ;;
+
+      "Delete user" )   source ./project4 ;;
+
+      "Edit user"  )  source ./project6   ;;
+
+      "Add group" )   source ./project3 ;;
+
+      "Delete group" )  source ./project5   ;;
+
+      "Edit group" )   source ./project7  ;;
+
+      "Show User Details"  )  source ./ShowDetails   ;;
+
+      "Adding user to group"  )  source ./adduser2gr   ;;
+
+      "Exit"   )   exit ;;
+
+ esac
+
+
+
+
+
+done
+
+
